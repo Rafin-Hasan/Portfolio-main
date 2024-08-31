@@ -1,0 +1,9 @@
+/* =========================== fonts ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Sevillana&display=swap");
+
+.satisfy {
+  font-family: "Satisfy", cursive;
+}
+.nam {
+  z-index: -1;
+}
