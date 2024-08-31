@@ -6,7 +6,7 @@ const NavberComponent = () => {
   return (
     <>
       <nav className="container ">
-        <div className="flex flex-col gap-[93px] pt-[100px] w-[370px] bg-black">
+        <div className="flex flex-col gap-[93px] pt-[100px] w-[370px]">
           <div>
             <img className="px-[125px]" src="./img/logo.png" alt="logo" />
             <div className="relative">
@@ -19,13 +19,15 @@ const NavberComponent = () => {
             </div>
           </div>
           <div>
-            <ul className="flex flex-col gap-[20px]">
+            <ul className="flex flex-col gap-[20px] inter font-medium">
               <li>
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     `text-[#333333] ${
-                      isActive ? "hover:text-[#d8d8df]" : "hover:text-[#ffffff]"
+                      isActive
+                        ? "hover:text-[#d8d8df] text-[#A5A6FF] font-bold"
+                        : "hover:text-[#ffffff]"
                     } flex justify-center`
                   }
                 >
@@ -37,7 +39,9 @@ const NavberComponent = () => {
                   to="#"
                   className={({ isActive }) =>
                     `text-[#333333] ${
-                      isActive ? "hover:text-[#d8d8df]" : "hover:text-[#ffffff]"
+                      isActive
+                        ? "hover:text-[#d8d8df] text-[#A5A6FF]"
+                        : "hover:text-[#ffffff] text-black"
                     } flex justify-center`
                   }
                 >
@@ -49,7 +53,9 @@ const NavberComponent = () => {
                   to="#"
                   className={({ isActive }) =>
                     `text-[#333333] ${
-                      isActive ? "hover:text-[#d8d8df]" : "hover:text-[#ffffff]"
+                      isActive
+                        ? "hover:text-[#d8d8df] text-[#A5A6FF]"
+                        : "hover:text-[#ffffff]"
                     } flex justify-center`
                   }
                 >
@@ -62,8 +68,8 @@ const NavberComponent = () => {
                   className={({ isActive }) =>
                     `text-[#333333] ${
                       isActive
-                        ? "hover:text-[#d8d8df] "
-                        : "hover:text-[#ffffff] text-[#A5A6FF]"
+                        ? "hover:text-[#d8d8df] text-[#A5A6FF]"
+                        : "hover:text-[#ffffff] "
                     } flex justify-center`
                   }
                 >
@@ -75,7 +81,9 @@ const NavberComponent = () => {
                   to="#"
                   className={({ isActive }) =>
                     `text-[#333333] ${
-                      isActive ? "hover:text-[#d8d8df]" : "hover:text-[#ffffff]"
+                      isActive
+                        ? "hover:text-[#d8d8df] text-[#A5A6FF]"
+                        : "hover:text-[#ffffff]"
                     } flex justify-center`
                   }
                 >
@@ -84,6 +92,7 @@ const NavberComponent = () => {
               </li>
             </ul>
           </div>
+          <div className="pt-[92px]"></div>
         </div>
       </nav>
     </>
