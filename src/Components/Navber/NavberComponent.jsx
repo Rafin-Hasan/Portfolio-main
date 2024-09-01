@@ -2,12 +2,16 @@ import React from "react";
 import "./NavberComponent.css";
 import { NavLink } from "react-router-dom";
 import { FaGithub } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+import styled from "styled-components";
+import Card from "./SocialMedia";
 
 const NavberComponent = () => {
   return (
     <>
       <nav className="container ">
-        <div className="flex flex-col gap-[93px] pt-[100px] w-[370px]">
+        <div className="flex flex-col gap-[93px] pt-[50px] w-[370px]">
           {/* =========== Logo and Name part starts ============= */}
           <div>
             <img className="px-[125px]" src="./img/logo.png" alt="logo" />
@@ -99,13 +103,16 @@ const NavberComponent = () => {
           </div>
           {/* =========== Logo and Name part ends ============= */}
 
-          <div className="pt-[92px]">
+          <div className="pt-[25px]">
+            <div className="flex justify-center gap-3 pb-6">
+              {/* ============ social media ============== */}
+              <Card />
+              {/* ============ social media ============== */}
+            </div>
             <div>
-              <div>
-                <FaGithub />
-              </div>
-              <div></div>
-              <div></div>
+              <p className="inter w-[230px] text-center m-auto leading-6 font-medium text-[16px] mb-[100px]">
+                Copyright ©2024 Rafin Hasan. All right reserved.
+              </p>
             </div>
           </div>
         </div>
