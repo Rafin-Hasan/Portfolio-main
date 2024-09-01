@@ -7,13 +7,21 @@ import {
 import "./App.css";
 import LayoutOne from "./Layouts/LayoutOne";
 import HomePage from "./Pages/HomePage";
+import AboutPage from "./Pages/AboutPage";
+import ServicesPage from "./Pages/ServicesPage";
+import WorksPage from "./Pages/WorksPage";
+import ContactPage from "./Pages/ContactPage";
 
 function App() {
   const route = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<LayoutOne />}>
-          <Route path="" element={<HomePage />} />
+          <Route index element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/works" element={<WorksPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Route>
       </Route>
     )

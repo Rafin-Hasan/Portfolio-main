@@ -1,12 +1,14 @@
 import React from "react";
 import "./NavberComponent.css";
 import { NavLink } from "react-router-dom";
+import { FaGithub } from "react-icons/fa6";
 
 const NavberComponent = () => {
   return (
     <>
       <nav className="container ">
         <div className="flex flex-col gap-[93px] pt-[100px] w-[370px]">
+          {/* =========== Logo and Name part starts ============= */}
           <div>
             <img className="px-[125px]" src="./img/logo.png" alt="logo" />
             <div className="relative">
@@ -18,8 +20,11 @@ const NavberComponent = () => {
               </h5>
             </div>
           </div>
+          {/* =========== Logo and Name part ends ============= */}
+
+          {/* =========== menu part starts ============= */}
           <div>
-            <ul className="flex flex-col gap-[20px] inter font-medium">
+            <ul className="flex flex-col gap-[20px] inter font-semibold">
               <li>
                 <NavLink
                   to="/"
@@ -27,7 +32,7 @@ const NavberComponent = () => {
                     `text-[#333333] ${
                       isActive
                         ? "hover:text-[#d8d8df] text-[#A5A6FF] font-bold"
-                        : "hover:text-[#ffffff]"
+                        : "hover:underline-offset-1"
                     } flex justify-center`
                   }
                 >
@@ -36,12 +41,12 @@ const NavberComponent = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="/about"
                   className={({ isActive }) =>
                     `text-[#333333] ${
                       isActive
                         ? "hover:text-[#d8d8df] text-[#A5A6FF]"
-                        : "hover:text-[#ffffff] text-black"
+                        : "hover:underline-offset-auto  "
                     } flex justify-center`
                   }
                 >
@@ -50,12 +55,12 @@ const NavberComponent = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="/services"
                   className={({ isActive }) =>
                     `text-[#333333] ${
                       isActive
                         ? "hover:text-[#d8d8df] text-[#A5A6FF]"
-                        : "hover:text-[#ffffff]"
+                        : "hover:underline-offset-1"
                     } flex justify-center`
                   }
                 >
@@ -64,12 +69,12 @@ const NavberComponent = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="/works"
                   className={({ isActive }) =>
                     `text-[#333333] ${
                       isActive
                         ? "hover:text-[#d8d8df] text-[#A5A6FF]"
-                        : "hover:text-[#ffffff] "
+                        : "hover:underline-offset-1 "
                     } flex justify-center`
                   }
                 >
@@ -78,12 +83,12 @@ const NavberComponent = () => {
               </li>
               <li>
                 <NavLink
-                  to="#"
+                  to="/contact"
                   className={({ isActive }) =>
                     `text-[#333333] ${
                       isActive
                         ? "hover:text-[#d8d8df] text-[#A5A6FF]"
-                        : "hover:text-[#ffffff]"
+                        : "hover:underline-offset-1"
                     } flex justify-center`
                   }
                 >
@@ -92,7 +97,17 @@ const NavberComponent = () => {
               </li>
             </ul>
           </div>
-          <div className="pt-[92px]"></div>
+          {/* =========== Logo and Name part ends ============= */}
+
+          <div className="pt-[92px]">
+            <div>
+              <div>
+                <FaGithub />
+              </div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </nav>
     </>
