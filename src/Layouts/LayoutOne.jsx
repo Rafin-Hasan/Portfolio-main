@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const LayoutOne = () => {
   return (
     <>
-      <div className="flex">
+      <div className=" flex">
         <Navber />
         <Outlet />
       </div>

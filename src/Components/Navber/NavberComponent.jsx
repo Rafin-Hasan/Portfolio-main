@@ -10,7 +10,7 @@ import Card from "./SocialMedia";
 const NavberComponent = () => {
   return (
     <>
-      <nav className="container ">
+      <nav className="bg-white">
         <div className="flex flex-col gap-[93px] pt-[50px] w-[370px]">
           {/* =========== Logo and Name part starts ============= */}
           <div>
@@ -19,7 +19,7 @@ const NavberComponent = () => {
               <h4 className="satisfy font-normal text-[60px] text-[#d8d8df] pl-[50px] absolute nam">
                 Rafin Hasan
               </h4>
-              <h5 className="inter text-center font-bold text-[30px] pt-[22px] ">
+              <h5 className="inter text-center font-bold text-[30px] pt-[22px] nam2">
                 Rafin Hasan
               </h5>
             </div>
@@ -110,7 +110,7 @@ const NavberComponent = () => {
               {/* ============ social media ============== */}
             </div>
             <div>
-              <p className="inter w-[230px] text-center m-auto leading-6 font-medium text-[16px] mb-[100px]">
+              <p className="inter w-[230px] text-center m-auto leading-6 font-medium text-[16px] mb-[20px]">
                 Copyright ©2024 Rafin Hasan. All right reserved.
               </p>
             </div>
