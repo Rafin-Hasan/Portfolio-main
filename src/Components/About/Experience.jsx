@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; // For animations
 
 const Experience = () => {
   const experiences = [
@@ -45,9 +46,14 @@ const Experience = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((experience) => (
-            <div
+            <motion.div
               key={experience.id}
-              className="relative bg-white shadow-xl rounded-xl p-8 border border-gray-200 transition-transform duration-300 transform hover:-translate-y-3 hover:shadow-2xl"
+              className="relative bg-white shadow-xl rounded-xl p-8 border border-gray-200 transition-transform duration-200 transform hover:-translate-y-3 hover:shadow-2xl"
+              whileHover={{ scale: 1.05 }} // Framer Motion hover effect
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              data-tip={experience.title} // Tooltip on hover
             >
               <div className="flex justify-between items-center">
                 <span className="text-sm text-purple-500 font-semibold">
@@ -71,7 +77,7 @@ const Experience = () => {
                   View Details
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
