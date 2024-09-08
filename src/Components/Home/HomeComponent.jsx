@@ -24,13 +24,13 @@ const HomeComponent = () => {
                 Hi, I’m <span className="text-[#A5A6FF]">Rafin Hasan</span>!
               </h1>
               <h2
-                className="w-[620px] savilla text-[#130F49] font-bold text-[50px] pl-[145px]"
+                className="w-[620px] kanit text-[#130F49] font-bold text-[50px] pl-[145px]"
                 data-aos="fade-left"
               >
                 Creative web developer based on React js.
               </h2>
               <p
-                className="w-[620px] savilla text-[#130F49] font-normal text-[20px] pt-3 pl-[145px]"
+                className="w-[620px] kanit text-[#130F49] font-normal text-[20px] pt-3 pl-[145px]"
                 data-aos="fade-up"
               >
                 I'm a React based professional frontend developer.

@@ -1,13 +1,10 @@
 /* ================= fonts ======================== */
-@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
 
 body {
   background: #effbf8;
   z-index: -999;
 }
-.savilla {
-  font-family: "Sevillana", cursive;
-}
+
 .bg {
   background: #effbf8;
   background-size: cover;
