@@ -5,10 +5,8 @@ import { Outlet } from "react-router-dom";
 const LayoutOne = () => {
   return (
     <>
-      <div className=" flex">
-        <Navber />
-        <Outlet />
-      </div>
+      <Navber />
+      <Outlet />
     </>
   );
 };

@@ -13,7 +13,7 @@ const HomeComponent = () => {
 
   return (
     <>
-      <section className="bg">
+      <section className="bg ml-[300px]">
         <div className="flex gap-[119px] container">
           <div>
             <div className="mt-[166px]" data-aos="fade-up">
