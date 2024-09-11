@@ -48,15 +48,17 @@ const ServiceComponent = () => {
   ];
 
   return (
-    <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
+    <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 ml-[400px]">
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-4xl font-extrabold text-gray-800">My Services</h2>
+          <h2 className="text-4xl poppins font-extrabold text-gray-800">
+            My Services
+          </h2>
           <a
             href="mailto:info@elsic.com"
-            className="text-blue-600 font-semibold"
+            className="text-blue-600 inter font-semibold hover:scale-110"
           >
-            info@elsic.com
+            rafinhasan.web@gmail.com
           </a>
         </div>
         {/* Grid Layout */}

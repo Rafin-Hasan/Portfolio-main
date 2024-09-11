@@ -21,13 +21,13 @@ const AboutComponent = () => {
               <DownloadButton />
             </div>
             <div className="w-[545px] pt-[120px] ">
-              <p className="poppins text-[16px] leading-6 font-medium text-center text-[#55527C]">
+              <p className="poppins text-[18px] leading-6 font-medium text-center text-[#55527C]">
                 Hi, It's me Rafin Hasan. I'm a professional web developer
                 specialized in HTML, CSS, JS and React. Experienced in creating
                 user friendly interfaces and committed to continuous learning
                 the latest web tools and technologies.
               </p>
-              <p className="poppins text-[16px] leading-6 font-medium text-center text-[#55527C]">
+              <p className="poppins text-[18px] leading-6 font-medium text-center text-[#55527C]">
                 By using comments, I make my codes so neat and clean so that it
                 could be easy to understand. My after sell service and some
                 extra facilities always keeps my clients happy.

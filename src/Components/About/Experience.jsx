@@ -41,7 +41,7 @@ const Experience = () => {
   return (
     <section className="py-14 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-10 text-center">
+        <h2 className="text-4xl font-extrabold poppins text-gray-800 mb-10 text-center">
           Everything about me!
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

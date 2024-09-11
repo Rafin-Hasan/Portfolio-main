@@ -1,10 +1,10 @@
 import React from "react";
-import WorkComponent from "../Components/Work/WorksComponents";
+import WorksComponents from "../Components/Work/WorksComponents";
 
 const WorksPage = () => {
   return (
     <div>
-      <WorkComponent />
+      <WorksComponents />
     </div>
   );
 };
