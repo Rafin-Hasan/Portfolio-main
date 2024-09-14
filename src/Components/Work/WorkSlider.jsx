@@ -85,40 +85,24 @@ const WorkSlider = () => {
           <img src="./SS/ss1.png" alt="Image 1" className={getClassNames(0)} />
         </div>
         <div className="px-2">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Image 2"
-            className={getClassNames(1)}
-          />
+          <img src="./SS/ss2.png" alt="Image 2" className={getClassNames(1)} />
         </div>
         <div className="px-2">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Image 3"
-            className={getClassNames(2)}
-          />
+          <img src="./SS/ss3.png" alt="Image 3" className={getClassNames(2)} />
         </div>
         <div className="px-2">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Image 4"
-            className={getClassNames(3)}
-          />
+          <img src="./SS/ss4.png" alt="Image 4" className={getClassNames(3)} />
         </div>
         <div className="px-2">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Image 5"
-            className={getClassNames(4)}
-          />
+          <img src="./SS/ss5.png" alt="Image 5" className={getClassNames(4)} />
         </div>
-        <div className="px-2">
+        {/* <div className="px-2">
           <img
             src="https://via.placeholder.com/400x300"
             alt="Image 6"
             className={getClassNames(5)}
           />
-        </div>
+        </div> */}
       </Slider>
     </div>
   );
