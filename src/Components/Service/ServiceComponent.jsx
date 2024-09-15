@@ -48,7 +48,7 @@ const ServiceComponent = () => {
   ];
 
   return (
-    <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 ml-[400px]">
+    <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 ">
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-4xl poppins font-extrabold text-gray-800">

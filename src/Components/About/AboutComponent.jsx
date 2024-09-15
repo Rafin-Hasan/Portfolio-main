@@ -6,7 +6,7 @@ import DownloadButton from "./DownloadButton";
 const AboutComponent = () => {
   return (
     <>
-      <section className="bg-white w-full ml-[300px] ">
+      <section className="bg-white w-full ">
         <div className="container">
           <div className="flex gap-[145px]">
             <div className="pt-[120px] pl-[100px] text-[#55527C]">
@@ -39,7 +39,7 @@ const AboutComponent = () => {
           </div>
         </div>
       </section>
-      <section className="container ml-[400px]">
+      <section className="container">
         <Experience />
       </section>
     </>

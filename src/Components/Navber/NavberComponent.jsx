@@ -7,11 +7,11 @@ import "./NavberComponent.css";
 const NavberComponent = () => {
   return (
     <>
-      <nav className="fixed top-0 left-0 h-full bg-white w-[370px] shadow-lg flex flex-col gap-[93px] pt-[50px] rounded-r-[20px]">
+      <nav className=" bg-white w-[370px] shadow-lg flex flex-col gap-[93px] pt-[50px] rounded-r-[20px]">
         {/* =========== Logo and Name part starts ============= */}
         <div>
           <motion.img
-            className="px-[125px]"
+            className="m-auto"
             src="./img/logo.png"
             alt="logo"
             initial={{ opacity: 0, scale: 0.5 }}
