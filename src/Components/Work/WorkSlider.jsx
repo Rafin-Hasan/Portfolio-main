@@ -5,7 +5,7 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // For arrow icons
 // Custom arrows positioned at the top-right
 const CustomArrows = ({ onNext, onPrev }) => {
   return (
-    <div className="absolute top-4 right-4 flex space-x-2 z-10">
+    <div className="absolute bottom-4 left-4 flex space-x-2 z-10">
       <button
         onClick={onPrev}
         className="p-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 transition-all duration-300"
@@ -68,7 +68,7 @@ const WorkSlider = () => {
   // Class assignment based on current slide
   const getClassNames = (index) => {
     if (index === currentSlide) {
-      return "w-full h-[400px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
+      return "w-full h-[350px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
     } else {
       return "w-full h-[300px] transform scale-95 opacity-70 transition-all duration-700 ease-in-out rounded-lg";
     }

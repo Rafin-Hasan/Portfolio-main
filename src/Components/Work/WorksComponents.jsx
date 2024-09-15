@@ -4,7 +4,7 @@ import WorkSlider from "./WorkSlider";
 const WorksComponents = () => {
   return (
     <>
-      <div className="ml-[400px]">
+      <div>
         <WorkSlider />
       </div>
     </>

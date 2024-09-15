@@ -28,7 +28,7 @@ const Card = () => {
       <div className="logo">Socials</div>
 
       <Link
-        to="https://www.linkedin.com"
+        to="https://www.linkedin.com/in/rafin-hasan-340723301/"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -40,7 +40,7 @@ const Card = () => {
       </Link>
 
       <Link
-        to="https://www.facebook.com"
+        to="https://www.facebook.com/profile.php?id=61557586061839"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -51,7 +51,11 @@ const Card = () => {
         </div>
       </Link>
 
-      <Link to="https://github.com" target="_blank" rel="noopener noreferrer">
+      <Link
+        to="https://github.com/Rafin-Hasan"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div className="box box3">
           <span className="icon">
             <GitHubIcon />
