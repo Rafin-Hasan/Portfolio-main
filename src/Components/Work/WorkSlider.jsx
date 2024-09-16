@@ -10,13 +10,13 @@ const CustomArrows = ({ onNext, onPrev }) => {
     <div className="absolute bottom-4 left-4 flex space-x-2 z-10">
       <button
         onClick={onPrev}
-        className="p-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 transition-all duration-300"
+        className="p-2 bg-[#A5A6FF] text-white rounded-full hover:bg-blue-600 transition-all duration-300"
       >
         <FaArrowLeft size={16} />
       </button>
       <button
         onClick={onNext}
-        className="p-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 transition-all duration-300"
+        className="p-2 bg-[#A5A6FF] text-white rounded-full hover:bg-blue-600 transition-all duration-300"
       >
         <FaArrowRight size={16} />
       </button>
