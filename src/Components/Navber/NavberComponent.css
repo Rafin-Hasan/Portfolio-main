@@ -4,8 +4,9 @@
 .satisfy {
   font-family: "Satisfy", cursive;
 }
-.nam {
+.nav {
   z-index: -2;
 }
-.bg {
+.nam {
+  z-index: -1;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // For arrow icons
+import { FaArrowRight, FaArrowLeft, FaArrowCircleRight } from "react-icons/fa"; // For arrow icons
 
 // Custom arrows positioned at the top-right
 const CustomArrows = ({ onNext, onPrev }) => {
@@ -35,9 +35,9 @@ const WorkSlider = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0",
-    autoplay: true, // Enables autoplay
-    autoplaySpeed: 2000, // 2 seconds for each slide
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex), // Update current slide index
+    autoplay: true,
+    autoplaySpeed: 2000,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
     responsive: [
       {
         breakpoint: 1024,
@@ -56,7 +56,6 @@ const WorkSlider = () => {
     ],
   };
 
-  // Function to handle manual slide change via custom arrows
   const next = () => {
     sliderRef.current.slickNext();
   };
@@ -68,41 +67,50 @@ const WorkSlider = () => {
   // Class assignment based on current slide
   const getClassNames = (index) => {
     if (index === currentSlide) {
-      return "w-full h-[350px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
+      return "relative w-full h-[350px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
     } else {
-      return "w-full h-[300px] transform scale-95 opacity-70 transition-all duration-700 ease-in-out rounded-lg";
+      return "relative w-full h-[300px] transform scale-95 opacity-70 transition-all duration-700 ease-in-out rounded-lg";
     }
+  };
+
+  // Overlay style for hover
+  const getOverlayClassNames = (index) => {
+    return `absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex justify-center items-center transition-opacity duration-300 rounded-lg ${
+      index === currentSlide ? "hover:opacity-100" : ""
+    }`;
+  };
+
+  // Fancy button styles
+  const fancyButtonClassNames = () => {
+    return `px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold rounded-lg 
+    shadow-lg transform hover:scale-105 hover:shadow-xl hover:glow transition-all duration-300 flex items-center space-x-2`;
   };
 
   return (
     <div className="relative container mx-auto px-4 py-12">
-      {/* Custom Arrows at the Top Right */}
+      {/* Custom Arrows at the Top Left */}
       <CustomArrows onNext={next} onPrev={prev} />
 
       {/* Slider */}
       <Slider {...settings} ref={sliderRef}>
-        <div className="px-2">
-          <img src="./SS/ss1.png" alt="Image 1" className={getClassNames(0)} />
-        </div>
-        <div className="px-2">
-          <img src="./SS/ss2.png" alt="Image 2" className={getClassNames(1)} />
-        </div>
-        <div className="px-2">
-          <img src="./SS/ss3.png" alt="Image 3" className={getClassNames(2)} />
-        </div>
-        <div className="px-2">
-          <img src="./SS/ss4.png" alt="Image 4" className={getClassNames(3)} />
-        </div>
-        <div className="px-2">
-          <img src="./SS/ss5.png" alt="Image 5" className={getClassNames(4)} />
-        </div>
-        {/* <div className="px-2">
-          <img
-            src="https://via.placeholder.com/400x300"
-            alt="Image 6"
-            className={getClassNames(5)}
-          />
-        </div> */}
+        {[...Array(5).keys()].map((_, index) => (
+          <div className="px-2" key={index}>
+            <div className="relative">
+              <img
+                src={`./SS/ss${index + 1}.png`}
+                alt={`Image ${index + 1}`}
+                className={getClassNames(index)}
+              />
+              {/* Overlay on hover */}
+              <div className={getOverlayClassNames(index)}>
+                <button className={fancyButtonClassNames()}>
+                  <span>Visit</span>
+                  <FaArrowCircleRight />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </Slider>
     </div>
   );
