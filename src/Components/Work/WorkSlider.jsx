@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft, FaArrowCircleRight } from "react-icons/fa"; // For arrow icons
+import { FaArrowRight, FaArrowLeft, FaArrowCircleRight } from "react-icons/fa";
+import AOS from "aos"; // Import AOS for animations
+import "aos/dist/aos.css"; // Import AOS styles
 
 // Custom arrows positioned at the top-right
 const CustomArrows = ({ onNext, onPrev }) => {
@@ -25,6 +27,14 @@ const CustomArrows = ({ onNext, onPrev }) => {
 const WorkSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = React.useRef(null);
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration (in milliseconds)
+      once: true, // Whether the animation should only happen once
+    });
+  }, []);
 
   // Slider settings with autoplay and timer
   const settings = {
@@ -67,7 +77,7 @@ const WorkSlider = () => {
   // Class assignment based on current slide
   const getClassNames = (index) => {
     if (index === currentSlide) {
-      return "relative w-full h-[350px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
+      return "relative w-[500px] h-[350px] transform scale-105 shadow-xl opacity-100 transition-all duration-700 ease-in-out rounded-lg bg-white bg-opacity-50 backdrop-blur-sm hover:scale-110";
     } else {
       return "relative w-full h-[300px] transform scale-95 opacity-70 transition-all duration-700 ease-in-out rounded-lg";
     }
@@ -80,22 +90,26 @@ const WorkSlider = () => {
     }`;
   };
 
-  // Fancy button styles
+  // Fancy button styles (with sky blue to deep blue gradient)
   const fancyButtonClassNames = () => {
-    return `px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold rounded-lg 
-    shadow-lg transform hover:scale-105 hover:shadow-xl hover:glow transition-all duration-300 flex items-center space-x-2`;
+    return `px-6 py-3 bg-gradient-to-r from-sky-400 to-blue-700 text-white font-semibold rounded-lg 
+    shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center space-x-2`;
   };
 
   return (
-    <div className="relative container mx-auto px-4 py-12">
-      {/* Custom Arrows at the Top Left */}
+    <div className="relative container mx-auto px-4 py-12" data-aos="fade-up">
+      {/* Custom Arrows */}
       <CustomArrows onNext={next} onPrev={prev} />
 
       {/* Slider */}
       <Slider {...settings} ref={sliderRef}>
         {[...Array(5).keys()].map((_, index) => (
           <div className="px-2" key={index}>
-            <div className="relative">
+            <div
+              className="relative"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+            >
               <img
                 src={`./SS/ss${index + 1}.png`}
                 alt={`Image ${index + 1}`}
