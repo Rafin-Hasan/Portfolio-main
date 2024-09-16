@@ -16,7 +16,7 @@ const Counters = () => {
           className={`${item.bgColor} rounded-lg shadow-lg w-[300px] py-3 flex flex-col items-center`}
         >
           <h2 className="text-4xl font-bold text-indigo-900">
-            <CountUp start={0} end={item.count} duration={2.0} />+
+            <CountUp start={0} end={item.count} duration={3.0} />+
           </h2>
           <p className="text-sm font-semibold text-gray-600 mt-2">
             {item.label.toUpperCase()}
