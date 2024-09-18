@@ -1,27 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Experience = () => {
+const Education = () => {
   const experiences = [
     {
       id: 1,
-      title: "Web Developer",
-      company: "Upwork",
-      date: "2021 - Present",
+      title: "Kapasia Govt. Pilot High School",
+      company: "SSC",
+      date: "2017-21",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      imageUrl:
-        "https://media.licdn.com/dms/image/C5612AQGEiomp6ho-Jw/article-cover_image-shrink_600_2000/0/1577679659746?e=2147483647&v=beta&t=XNtkM0XU2jyJChnDOKZJKGR-ojXXAPyFV3RFq8_vSJE", // Add your image URL here
+      imageUrl: "./img/kp.jpeg", // Add your image URL here
     },
     {
       id: 2,
-      title: "Web Developer",
-      company: "Fiverr",
-      date: "2021 - Present",
+      title: "Lincoln University",
+      company: "Foundation in Science",
+      date: "2022-23",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       imageUrl:
-        "https://fiverr-res.cloudinary.com/npm-assets/layout-server/fiverr-og-logo.5fd6463.png", // Add your image URL here
+        "https://www.tutelagestudy.com/uploads/university/IMG_20221214_1359321.jpg", // Add your image URL here
     },
   ];
 
@@ -29,7 +28,7 @@ const Experience = () => {
     <section className="py-14 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
       <div className="container mx-auto">
         <h2 className="text-4xl font-extrabold poppins text-gray-800 mb-10 text-center">
-          Everything about me!
+          Education
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((experience) => (
@@ -80,4 +79,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;

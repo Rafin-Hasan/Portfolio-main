@@ -1,11 +1,23 @@
 import React from "react";
 import "./AboutComponent.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import Counters from "./Counters";
 import Experience from "./Experience";
 import DownloadButton from "./DownloadButton";
+import Education from "./Education";
+import { useEffect } from "react";
 
 const AboutComponent = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Longer duration for a smoother animation
+      easing: "ease-in-out", // Smooth in-out effect
+      once: true, // Animation happens only once when scrolled into view
+      mirror: false, // Animation does not repeat when scrolling back up
+    });
+  }, []);
   return (
     <>
       <section className="bg-white w-full ">
@@ -70,14 +82,6 @@ const AboutComponent = () => {
               </motion.p>
             </div>
           </div>
-          <motion.div
-            className="flex items-center justify-center pt-[64px] pb-[120px]"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <Counters />
-          </motion.div>
         </div>
         <div className="video-container">
           <iframe
@@ -90,8 +94,24 @@ const AboutComponent = () => {
             title="Embedded video"
           ></iframe>
         </div>
+        <div className="flex items-center justify-center pt-[64px] pb-[120px]">
+          <Counters />
+        </div>
       </section>
-      <section className="container">
+      <section
+        className="container"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+        data-aos-delay="200"
+      >
+        <Education />
+      </section>
+      <section
+        className="container"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        data-aos-delay="400"
+      >
         <Experience />
       </section>
     </>
