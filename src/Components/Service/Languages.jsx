@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
-import {
-  FaLaptopCode, // For Web Development
-  FaPaintBrush, // For Web Design
-  FaObjectGroup, // For UI/UX Design
-} from "react-icons/fa"; // React Icons
-import { Link } from "react-router-dom";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa"; // Icons for HTML, CSS, JS, React
 
-const ServiceComponent = () => {
+const Languages = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
@@ -17,28 +12,31 @@ const ServiceComponent = () => {
     });
   }, []);
 
-  const services = [
+  const languages = [
     {
       id: 1,
-      title: "UI/UX",
-      description: "Create beautiful and functional websites.",
-      icon: <FaObjectGroup />, // Appropriate icon for UI/UX
+      name: "HTML",
+      icon: <FaHtml5 className="text-5xl text-red-600" />,
       imageUrl:
-        "https://www.creativeitinstitute.com/images/course/course_1662637290.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s", // Add your image URL here
     },
     {
       id: 2,
-      title: "Web Design",
-      description: "Optimize user experience with thoughtful interfaces.",
-      imageUrl:
-        "https://www.academyoflearning.com/wp-content/uploads/2022/06/Web_design_7.jpeg",
+      name: "CSS",
+      icon: <FaCss3Alt className="text-5xl text-blue-500" />,
+      imageUrl: "https://www.svgrepo.com/show/303263/css3-logo.svg", // Add your image URL here
     },
     {
       id: 3,
-      title: "Web Development",
-      description: "Develop mobile applications for all platforms.",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D4D12AQHWjlf6CXDezA/article-cover_image-shrink_720_1280/0/1698039213268?e=2147483647&v=beta&t=9d8VyULomdIk9zkz_U9N_TE4_pUdFq1dFCglRh8fv_o",
+      name: "JavaScript",
+      icon: <FaJs className="text-5xl text-yellow-500" />,
+      imageUrl: "https://www.svgrepo.com/show/355081/js.svg", // Add your image URL here
+    },
+    {
+      id: 4,
+      name: "React",
+      icon: <FaReact className="text-5xl text-blue-400" />,
+      imageUrl: "https://www.svgrepo.com/show/327388/logo-react.svg", // Add your image URL here
     },
   ];
 
@@ -50,50 +48,35 @@ const ServiceComponent = () => {
             className="text-4xl poppins font-extrabold text-gray-800"
             data-aos="fade-up"
           >
-            Languages that I use
+            Programming Languages I Use
           </h2>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {languages.map((language, index) => (
             <div
-              key={service.id}
-              className="relative border border-gray-200 rounded-lg p-6 hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 group"
+              key={language.id}
+              className="relative h-40 w-40 bg-white border border-gray-200 rounded-lg flex flex-col justify-center items-center text-center hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300 group"
               data-aos="fade-up"
               data-aos-delay={`${index * 100}`}
             >
-              {/* Background image with reduced opacity */}
+              {/* Background image with reduced opacity on hover */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg z-0"
                 style={{
-                  backgroundImage: `url(${service.imageUrl})`,
+                  backgroundImage: `url(${language.imageUrl})`,
                 }}
               ></div>
 
-              {/* Card content, kept above the background */}
+              {/* Icon and Language Name */}
               <div className="relative z-10">
-                <div className="text-gray-400 text-lg font-semibold mb-3 flex items-center">
-                  <span className="mr-2 text-2xl text-purple-500">
-                    {service.icon}
-                  </span>
-                  0{service.id}
+                <div className="text-gray-400 text-lg font-semibold mb-3">
+                  {language.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 transition-colors duration-300">
-                  {service.title}
+                <h3 className="text-xl font-bold text-gray-800 group-hover:text-purple-500 transition-colors duration-300">
+                  {language.name}
                 </h3>
-                <p className="text-black mb-4 transition-colors duration-300">
-                  {service.description}
-                </p>
-                <a
-                  href="#"
-                  className="text-blue-600 font-semibold inline-flex items-center transition-colors hover:text-white"
-                >
-                  Learn More
-                  <span className="ml-2 transition-transform group-hover:translate-x-1 hover:text-white">
-                    &rarr;
-                  </span>
-                </a>
               </div>
             </div>
           ))}
@@ -103,4 +86,4 @@ const ServiceComponent = () => {
   );
 };
 
-export default ServiceComponent;
+export default Languages;
