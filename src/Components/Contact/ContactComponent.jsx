@@ -34,7 +34,7 @@ const ContactComponent = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-r pl-[180px]">
+    <div className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-r pl-[100px]">
       <div className="max-w-6xl w-full bg-white grid grid-cols-1 lg:grid-cols-2 shadow-lg rounded-2xl overflow-hidden">
         {/* Left Section: Lottie Animation */}
         <motion.div
