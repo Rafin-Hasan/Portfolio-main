@@ -1,8 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./HomeComponent.css";
+import { useNavigate } from "react-router-dom";
 
 const HomeComponent = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/works");
+  };
+  const handleGO = () => {
+    navigate("/contact");
+  };
   return (
     <>
       <section className="bg ">
@@ -46,10 +54,16 @@ const HomeComponent = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button className="bg-[#130F49] text-white font-semibold py-2 px-6 rounded-full hover:bg-white hover:text-[#130F49] border-2 border-[#130F49] transition duration-300 ease-in-out">
+              <button
+                onClick={handleClick}
+                className="bg-[#130F49] text-white font-semibold py-2 px-6 rounded-full hover:bg-white hover:text-[#130F49] border-2 border-[#130F49] transition duration-300 ease-in-out"
+              >
                 Get a project
               </button>
-              <button className="bg-transparent text-[#130F49] font-semibold py-2 px-6 rounded-full hover:bg-[#130F49] hover:text-white border-2 border-[#130F49] transition duration-300 ease-in-out ml-4">
+              <button
+                onClick={handleGO}
+                className="bg-transparent text-[#130F49] font-semibold py-2 px-6 rounded-full hover:bg-[#130F49] hover:text-white border-2 border-[#130F49] transition duration-300 ease-in-out ml-4"
+              >
                 Let's talk
               </button>
             </motion.div>

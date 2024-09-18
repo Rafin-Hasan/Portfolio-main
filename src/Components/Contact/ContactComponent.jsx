@@ -1,6 +1,8 @@
+import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify"; // Import Toastify
+import hi from "../../../public/Animation/hi.json"; // Replace with the actual path to your Lottie animation
+import { toast, ToastContainer } from "react-toastify"; // Import Toastify for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import the Toastify CSS
 
 const ContactComponent = () => {
@@ -31,41 +33,27 @@ const ContactComponent = () => {
   };
 
   return (
-    <div className="min-h-screen ml-[230px] flex items-center justify-center px-6 py-12">
-      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 shadow-lg rounded-xl overflow-hidden">
-        {/* Left Section: Contact Information */}
-        <div className="bg-gradient-to-br from-blue-400 to-blue-500 text-white p-10 flex flex-col justify-center space-y-6">
-          <h4 className="text-sm uppercase tracking-wide font-semibold">
-            Let's Connect
-          </h4>
-          <h1 className="text-4xl font-bold leading-tight">Get in Touch</h1>
-          <p className="text-gray-100">
-            I'm currently available to take on new projects. Feel free to send
-            me a message about anything you'd like to discuss.
+    <div className="min-h-screen flex items-center justify-center pl-[180px] px-6 py-12 bg-gradient-to-r ">
+      <div className="max-w-6xl w-full bg-white grid grid-cols-1 lg:grid-cols-2 shadow-lg rounded-2xl overflow-hidden">
+        {/* Left Section: Lottie Animation */}
+        <div className="bg-gradient-to-br from-blue-500 to-purple-500 p-10 flex flex-col justify-center items-center text-white">
+          <Lottie
+            animationData={hi}
+            loop={true}
+            className="w-full max-w-md h-auto"
+          />
+          <h1 className="text-4xl font-bold mt-6">Let's Connect!</h1>
+          <p className="mt-4 text-lg text-center">
+            Feel free to reach out about new projects, collaborations, or just
+            to say hi!
           </p>
-          <div className="space-y-2">
-            <p className="text-lg font-semibold">(+880) 177 8566 730</p>
-            <p>
-              <Link
-                to="rafinhasan.web@gmail.com"
-                className="text-lg underline hover:text-blue-200 transition-colors"
-              >
-                rafinhasan.web@gmail.com
-              </Link>
-            </p>
-            <p>
-              <Link
-                to="#"
-                className="text-lg underline hover:text-blue-200 transition-colors"
-              >
-                Gazipur, Dhaka, Bangladesh
-              </Link>
-            </p>
-          </div>
         </div>
 
-        {/* Right Section: Form */}
-        <div className="bg-white p-10 space-y-8">
+        {/* Right Section: Contact Form */}
+        <div className="p-10 bg-white flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            Send a Message
+          </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -73,7 +61,7 @@ const ContactComponent = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
+              className="w-full px-5 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
               required
             />
             <input
@@ -82,7 +70,7 @@ const ContactComponent = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Your email"
-              className="w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
+              className="w-full px-5 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
               required
             />
             <textarea
@@ -90,15 +78,15 @@ const ContactComponent = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Write something..."
-              className="w-full px-5 py-4 text-lg border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
+              className="w-full px-5 py-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-400 transition duration-300 ease-in-out hover:shadow-lg"
               rows="5"
               required
             ></textarea>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-sky-400 to-blue-500 text-white py-4 rounded-lg font-semibold hover:from-sky-300 hover:to-blue-400 transition-transform transform hover:scale-105 shadow-md hover:shadow-xl"
+              className="w-full bg-gradient-to-r from-purple-500 to-blue-600 text-white py-4 rounded-lg font-semibold hover:from-purple-400 hover:to-blue-500 transition-transform transform hover:scale-105 shadow-md hover:shadow-xl"
             >
-              Submit now
+              Send Message
             </button>
           </form>
         </div>
