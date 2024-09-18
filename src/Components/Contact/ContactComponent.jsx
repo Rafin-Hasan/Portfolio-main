@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import hi from "../../../public/Animation/hi.json"; // Replace with the actual path to your Lottie animation
 import { toast, ToastContainer } from "react-toastify"; // Import Toastify for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import the Toastify CSS
+import { motion } from "framer-motion"; // Framer Motion for animations
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
@@ -33,10 +34,15 @@ const ContactComponent = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center pl-[180px] px-6 py-12 bg-gradient-to-r ">
+    <div className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-r pl-[180px]">
       <div className="max-w-6xl w-full bg-white grid grid-cols-1 lg:grid-cols-2 shadow-lg rounded-2xl overflow-hidden">
         {/* Left Section: Lottie Animation */}
-        <div className="bg-gradient-to-br from-blue-500 to-purple-500 p-10 flex flex-col justify-center items-center text-white">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-blue-500 to-purple-500 p-10 flex flex-col justify-center items-center text-white"
+        >
           <Lottie
             animationData={hi}
             loop={true}
@@ -47,10 +53,15 @@ const ContactComponent = () => {
             Feel free to reach out about new projects, collaborations, or just
             to say hi!
           </p>
-        </div>
+        </motion.div>
 
         {/* Right Section: Contact Form */}
-        <div className="p-10 bg-white flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="p-10 bg-white flex flex-col justify-center"
+        >
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
             Send a Message
           </h2>
@@ -89,7 +100,7 @@ const ContactComponent = () => {
               Send Message
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
 
       {/* Toast Notification Container */}
