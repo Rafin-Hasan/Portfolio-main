@@ -7,7 +7,7 @@ import "./NavberComponent.css";
 const NavberComponent = () => {
   return (
     <>
-      <nav className=" bg-white w-[370px] h-[100vh] shadow-lg flex flex-col gap-[93px] pt-[50px] rounded-r-[20px] ">
+      <nav className="  w-[370px] shadow-lg flex flex-col gap-[93px] pt-[50px] rounded-r-[20px] ">
         {/* =========== Logo and Name part starts ============= */}
         <div>
           <motion.img
@@ -20,7 +20,7 @@ const NavberComponent = () => {
           />
           <div className="relative">
             <motion.h4
-              className="satisfy font-normal text-[60px] text-[#d8d8df] pl-[50px] absolute nam"
+              className="satisfy font-normal text-[55px] text-[#d8d8df] pl-[25px] pt-[3px] absolute nam"
               initial={{ x: -200 }}
               animate={{ x: 0 }}
               transition={{ duration: 1 }}

@@ -13,7 +13,7 @@ const HomeComponent = () => {
   };
   return (
     <>
-      <section className="bg ">
+      <section className="bg">
         <div className="flex gap-[119px] container">
           <div>
             <motion.div
@@ -87,7 +87,7 @@ const HomeComponent = () => {
           </div>
 
           <motion.img
-            className="pt-[100px] pr-[100px] w-[545px] h-[621px]"
+            className="pt-[100px] mr-[150px] w-[545px] h-[621px]"
             src="./img/banner.png"
             alt="banner"
             initial={{ opacity: 0, x: 100 }}

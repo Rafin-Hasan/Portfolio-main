@@ -1,13 +1,13 @@
 /* ================= fonts ======================== */
 
-body {
+/* body {
   background: #effbf8;
   z-index: -999;
-}
+} */
 
 .bg {
   background: #effbf8;
-  background-size: cover;
+  background-size: auto;
 }
 /* Tablet */
 @media (max-width: 1024px) {
