@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import {
@@ -9,12 +9,24 @@ import {
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     AOS.init({
       duration: 1000, // Animation duration
       easing: "ease-in-out", // Animation easing function
       once: true, // Whether animation should happen only once
     });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const services = [
@@ -46,7 +58,7 @@ const Services = () => {
 
   return (
     <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
-      <div className="container mx-auto">
+      <div className="container mx-auto flex flex-col items-center">
         <div className="flex justify-between items-center mb-8">
           <h2
             className="text-4xl poppins font-extrabold text-gray-800"
@@ -55,8 +67,8 @@ const Services = () => {
             My Services
           </h2>
           <Link
-            to="mailto:rafinhasan.web@gmail.com"
-            className="text-blue-600 inter font-semibold hover:scale-110"
+            to="rafinhasan.web@gmail.com"
+            className="text-blue-600 inter pl-[10px] font-semibold hover:scale-110"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -82,17 +94,17 @@ const Services = () => {
               ></div>
 
               {/* Card content, kept above the background */}
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col justify-center items-center">
                 <div className="text-gray-400 text-lg font-semibold mb-3 flex items-center">
                   <span className="mr-2 text-2xl text-purple-500">
                     {service.icon}
                   </span>
-                  0{service.id}
+                  {service.id < 10 ? `0${service.id}` : service.id}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-800 mb-2 transition-colors duration-300 text-center">
                   {service.title}
                 </h3>
-                <p className="text-black mb-4 transition-colors duration-300">
+                <p className="text-black mb-4 transition-colors duration-300 text-center">
                   {service.description}
                 </p>
                 <a

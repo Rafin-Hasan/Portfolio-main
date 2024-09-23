@@ -70,6 +70,13 @@ const HomeComponent = () => {
     marginTop: "40px",
   };
 
+  // Style for the "pl-[50px]" section with conditional absolute positioning
+  const plStyle = {
+    paddingLeft: windowWidth < 768 ? "0px" : "50px",
+    position: windowWidth > 768 ? "absolute" : "relative",
+    top: windowWidth > 768 ? "450px" : "auto",
+  };
+
   return (
     <section style={{ backgroundColor: "#F4FBF6" }}>
       <div style={containerStyle}>
@@ -119,7 +126,7 @@ const HomeComponent = () => {
           transition={{ duration: 1.2, delay: 0.8 }}
         />
       </div>
-      <div>
+      <div style={plStyle}>
         <motion.div
           style={buttonContainerStyle}
           initial={{ opacity: 0, scale: 0.9 }}

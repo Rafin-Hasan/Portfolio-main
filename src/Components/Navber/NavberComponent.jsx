@@ -83,7 +83,7 @@ const NavberComponent = () => {
             transition={{ duration: 1.2 }}
           />
           <div className="relative">
-            <motion.h4
+            {/* <motion.h4
               className="satisfy font-normal text-[45px] text-[#d8d8df] pt-[9px] absolute nam"
               style={{
                 fontSize: windowWidth <= 896 ? "53px" : "45px",
@@ -95,7 +95,7 @@ const NavberComponent = () => {
               transition={{ duration: 1 }}
             >
               Rafin Hasan
-            </motion.h4>
+            </motion.h4> */}
             <motion.h5
               className="inter text-center font-bold text-[30px] pt-[22px]"
               initial={{ x: 200 }}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AboutComponent.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -7,25 +7,57 @@ import Counters from "./Counters";
 import Experience from "./Experience";
 import DownloadButton from "./DownloadButton";
 import Education from "./Education";
-import { useEffect } from "react";
 
 const AboutComponent = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
     AOS.init({
-      duration: 1200, // Longer duration for a smoother animation
-      easing: "ease-in-out", // Smooth in-out effect
-      once: true, // Animation happens only once when scrolled into view
-      mirror: false, // Animation does not repeat when scrolling back up
+      duration: 1200,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
     });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Responsive styles based on window width
+  const containerStyle = {
+    display: "flex",
+    flexDirection: windowWidth < 768 ? "column" : "row",
+    gap: windowWidth < 768 ? "20px" : "145px",
+  };
+
+  const textStyle = {
+    paddingLeft: windowWidth < 768 ? "0px" : "100px",
+    textAlign: windowWidth < 768 ? "center" : "left",
+  };
+
+  const headingStyle = {
+    fontSize: windowWidth < 576 ? "28px" : windowWidth < 768 ? "36px" : "40px",
+  };
+
+  const paragraphStyle = {
+    fontSize: windowWidth < 576 ? "14px" : "18px",
+  };
+
   return (
     <>
       <section className="bg-white w-full ">
         <div className="container">
-          <div className="flex gap-[145px]">
-            <div className="pt-[120px] pl-[100px] text-[#55527C]">
+          <div style={containerStyle}>
+            <div className="pt-[120px]" style={textStyle}>
               <motion.h5
-                className="poppins text-[18px] leading-6 font-medium"
+                className="poppins leading-6 font-medium"
+                style={paragraphStyle}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -33,7 +65,8 @@ const AboutComponent = () => {
                 Hi! nice to meet you
               </motion.h5>
               <motion.p
-                className="poppins text-[16px] leading-6 font-normal"
+                className="poppins leading-6 font-normal"
+                style={paragraphStyle}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -41,7 +74,8 @@ const AboutComponent = () => {
                 I'm
               </motion.p>
               <motion.h1
-                className="poppins font-bold text-[40px]"
+                className="poppins font-bold"
+                style={headingStyle}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -49,7 +83,8 @@ const AboutComponent = () => {
                 Rafin Hasan
               </motion.h1>
               <motion.h5
-                className="poppins font-semibold text-[20px] leading-8 pb-3"
+                className="poppins font-semibold leading-8 pb-3"
+                style={paragraphStyle}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -58,9 +93,10 @@ const AboutComponent = () => {
               </motion.h5>
               <DownloadButton />
             </div>
-            <div className="w-[545px] pt-[120px] ">
+            <div className="w-[545px] pt-[120px]">
               <motion.p
-                className="poppins text-[18px] leading-6 font-medium text-center text-[#55527C]"
+                className="poppins leading-6 font-medium text-center text-[#55527C]"
+                style={paragraphStyle}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.0 }}
@@ -71,7 +107,8 @@ const AboutComponent = () => {
                 the latest web tools and technologies.
               </motion.p>
               <motion.p
-                className="poppins text-[18px] leading-6 font-medium text-center text-[#55527C]"
+                className="poppins leading-6 font-medium text-center text-[#55527C]"
+                style={paragraphStyle}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
@@ -85,7 +122,7 @@ const AboutComponent = () => {
         </div>
         <div className="video-container">
           <iframe
-            width="640"
+            width="100%"
             height="360"
             src="./Intro Video/Intro.mp4"
             frameBorder="0"

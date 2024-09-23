@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import {
@@ -12,12 +12,24 @@ import {
 import { SiTailwindcss, SiFirebase, SiRedux } from "react-icons/si"; // Additional Icons for Tailwind, Firebase, Redux
 
 const ToolsComponent = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     AOS.init({
       duration: 1000, // Animation duration
       easing: "ease-in-out", // Animation easing function
       once: true, // Whether animation should happen only once
     });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const tools = [
@@ -81,8 +93,8 @@ const ToolsComponent = () => {
 
   return (
     <section className="py-12 px-6 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-8">
+      <div className="container mx-auto flex flex-col items-center">
+        <div className="flex justify-center items-center mb-8">
           <h2
             className="text-4xl poppins font-extrabold text-gray-800"
             data-aos="fade-up"
