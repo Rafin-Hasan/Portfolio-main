@@ -63,8 +63,8 @@ const NavberComponent = () => {
           position: windowWidth <= 896 ? "fixed" : "relative", // Fixed for mobile, relative for larger screens
           top: 0,
           left: 0,
-          height: "100vh",
-          backgroundColor: "#fff",
+          // height: "100vh",
+          backgroundColor: windowWidth <= 896 ? "#fff" : "transparent",
           zIndex: 999, // Ensure the navbar stays below the menu button
           display: windowWidth > 896 || isNavOpen ? "flex" : "none", // Show navbar only when needed
           flexDirection: "column",
@@ -84,7 +84,12 @@ const NavberComponent = () => {
           />
           <div className="relative">
             <motion.h4
-              className="satisfy font-normal text-[55px] text-[#d8d8df] pl-[25px] pt-[3px] absolute nam"
+              className="satisfy font-normal text-[45px] text-[#d8d8df] pt-[9px] absolute nam"
+              style={{
+                fontSize: windowWidth <= 896 ? "53px" : "45px",
+                paddingLeft: windowWidth <= 896 ? "58px" : "25px",
+                paddingTop: windowWidth <= 896 ? "5px" : "9px",
+              }}
               initial={{ x: -200 }}
               animate={{ x: 0 }}
               transition={{ duration: 1 }}
