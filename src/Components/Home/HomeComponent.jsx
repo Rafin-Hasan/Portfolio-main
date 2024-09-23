@@ -70,8 +70,6 @@ const HomeComponent = () => {
     marginTop: "40px",
   };
 
-  const 
-
   return (
     <section style={{ backgroundColor: "#F4FBF6" }}>
       <div style={containerStyle}>
