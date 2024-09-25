@@ -74,7 +74,7 @@ const HomeComponent = () => {
   const plStyle = {
     paddingLeft: windowWidth < 768 ? "0px" : "50px",
     position: windowWidth > 768 ? "absolute" : "relative",
-    top: windowWidth > 768 ? "450px" : "auto",
+    top: windowWidth > 768 ? "500px" : "auto",
   };
 
   return (

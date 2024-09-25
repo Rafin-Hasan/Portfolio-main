@@ -13,6 +13,7 @@ import WorksPage from "./Pages/WorksPage";
 import ContactPage from "./Pages/ContactPage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import app from "./Firebase/Firebase.config";
 
 function App() {
   const route = createBrowserRouter(

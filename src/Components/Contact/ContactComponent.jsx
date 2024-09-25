@@ -1,11 +1,16 @@
 import Lottie from "lottie-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import hi from "../../../public/Animation/hi.json"; // Replace with the actual path to your Lottie animation
-import { toast, ToastContainer } from "react-toastify"; // Import Toastify for notifications
-import "react-toastify/dist/ReactToastify.css"; // Import the Toastify CSS
-import { motion } from "framer-motion"; // Framer Motion for animations
+import hi from "../../../public/Animation/hi.json";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+// import { getDatabase, ref, onValue } from "firebase/database";
 
+// ============= firebase =========
+// const db = getDatabase();
+
+// ============= contact form =========
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,6 +27,11 @@ const ContactComponent = () => {
   // Form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const starCountRef = ref(db, "posts/" + postId + "/starCount");
+    // onValue(starCountRef, (snapshot) => {
+    //   const data = snapshot.val();
+    //   updateStarCount(postElement, data);
+    // });
 
     // Simple validation check
     if (formData.name && formData.email && formData.message) {
